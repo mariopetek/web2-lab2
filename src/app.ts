@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import path from 'path'
 
 import xssRouter from './routes/xss'
+import sdeRouter from './routes/sde'
 
 dotenv.config()
 
@@ -19,9 +20,21 @@ app.get('/', (req, res) => {
 })
 
 app.use('/xss', xssRouter)
+app.use('/sde', sdeRouter)
 
-const port = process.env.PORT || 3000
+const externalUrl = process.env.RENDER_EXTERNAL_URL
 
-app.listen(port, () => {
-    console.log(`Application running at http://localhost:${port}`)
-})
+const port = externalUrl && process.env.PORT ? parseInt(process.env.PORT) : 3000
+
+if (externalUrl) {
+    const hostname = '0.0.0.0'
+    app.listen(port, hostname, () => {
+        console.log(
+            `Application locally running at http://${hostname}:${port} and from outside on ${externalUrl}`
+        )
+    })
+} else {
+    app.listen(port, () => {
+        console.log(`Application running at http://localhost:${port}`)
+    })
+}

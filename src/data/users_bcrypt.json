@@ -1,0 +1,27 @@
+[
+    {
+        "user_id": 1,
+        "username": "mariop",
+        "password": "$2a$12$noLT6ibdeeJys8S2YT1ymupHiQ2oqQ.F7oniiDJrnJer5CChHJ8aC"
+    },
+    {
+        "user_id": 2,
+        "username": "petar123",
+        "password": "$2a$12$r/fuSX9PQtHiItTot3tZSOtC0kRiczdg/IIhA9T4YUWOvixtEUJ2S"
+    },
+    {
+        "user_id": 3,
+        "username": "johndoe",
+        "password": "$2a$12$L34k2mT3v2WxEXFTJ3i9yeMQcHbejOHSH2nFJHwjKLoePugvYCv0G"
+    },
+    {
+        "user_id": 4,
+        "username": "big_boy_1",
+        "password": "$2a$12$TQJjLVAD/1gANJfwc8qSyeGdnqbA0.CPSVzCgPbz4.qS.ZktukRi6"
+    },
+    {
+        "user_id": 5,
+        "username": "patrik_p",
+        "password": "$2a$12$ChgeHyzgFfz1rziF1Yr56uQjfVMzoEQtkD0PJcFpZcPPfzqN8wO7K"
+    }
+]

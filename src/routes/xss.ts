@@ -2,9 +2,9 @@ import express from 'express'
 
 const router = express.Router()
 
-router.route('/').get((req, res) => {
-    if (req.query.vulnerability) {
-        res.send(`
+router.get('/', (req, res) => {
+    if (req.query.vulnerability === 'on') {
+        return res.send(`
         <!DOCTYPE html>
         <html lang="en">
             <head>
@@ -59,9 +59,10 @@ router.route('/').get((req, res) => {
             </body>
         </html>
         `)
-    } else {
-        res.render('xss', { imageSrc: req.query.imageSrc })
+    } else if (req.query.vulnerability === undefined) {
+        return res.render('xss', { imageSrc: req.query.imageSrc })
     }
+    return res.sendStatus(400)
 })
 
 export default router

@@ -9,12 +9,6 @@ a:hover {
 .instructions > span:nth-child(1) {
     font-weight: 700;
 }
-.instructions > span:nth-child(2) {
-    color: #9c0000;
-    font-weight: 700;
-    background-color: #ffc2c2;
-    overflow-wrap: break-word;
-}
 form {
     display: flex;
     flex-direction: column;
@@ -23,26 +17,6 @@ form {
 .vulnerability-input > input:hover,
 .vulnerability-input > label:hover {
     cursor: pointer;
-}
-.image-input {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.image-input > label {
-    font-weight: 700;
-}
-.image-input > input {
-    padding: 10px;
-    border: none;
-    outline: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: all 0.2s ease;
-}
-.image-input > input:hover,
-.image-input > input:focus {
-    filter: brightness(95%);
 }
 button {
     border: none;
@@ -59,9 +33,4 @@ button {
 button:hover {
     filter: brightness(90%);
     cursor: pointer;
-}
-img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: var(--border-radius);
 }

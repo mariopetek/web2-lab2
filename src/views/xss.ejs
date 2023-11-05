@@ -5,20 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/css/xss.css" />
         <link rel="stylesheet" href="/css/global.css" />
-        <title>XSS</title>
+        <title>Cross-site scripting (XSS)</title>
     </head>
     <body>
         <div class="container">
-            <a href="/">Početna stranica</a>
+            <a href="/" title="Povratak na početnu stranicu"
+                >Početna stranica</a
+            >
             <h1>Cross-site scripting (XSS)</h1>
             <p class="instructions">
                 <span>Upute:<br /></span>U nastavku je moguće isprobati
                 reflektirani Cross-site scripting (XSS) napad. Kako bi napad bio
                 moguć prvo je potrebno uključiti ranjivost. U polje za unos se
                 unosi URL slike koja će se potom, klikom na gumb za prikaz,
-                prikazati ispod obrasca, međutim ukoliko probamo unijeti tekst
+                prikazati ispod obrasca. Međutim, ukoliko probamo unijeti tekst
                 poput
-                <span>" onerror="alert(document.cookie)"/></span>
+                <span title="XSS napad"
+                    >" onerror="alert(document.cookie)"/></span
+                >
                 vidimo da se izvršava JavaScript kod koji prikazuje podatke o
                 korisničkoj sjednici.
             </p>
@@ -30,11 +34,16 @@
                         id="vulnerability"
                         name="vulnerability"
                         id="vulnerability"
+                        title="Ranjivost"
                     />
-                    <label for="vulnerability">Ranjivost uključena</label>
+                    <label for="vulnerability" title="Ranjivost"
+                        >Ranjivost uključena</label
+                    >
                 </div>
                 <div class="image-input">
-                    <label for="imageSrc"
+                    <label
+                        for="imageSrc"
+                        title="Unesite URL slike koju želite prikazati"
                         >Unesite URL slike koju želite prikazati</label
                     >
                     <input
@@ -42,9 +51,10 @@
                         placeholder="URL..."
                         name="imageSrc"
                         id="imageSrc"
+                        title="Unesite URL slike koju želite prikazati"
                     />
                 </div>
-                <button type="submit">Prikaz</button>
+                <button type="submit" title="Prikaz slike">Prikaz</button>
             </form>
         </div>
         <% if(imageSrc) {%>

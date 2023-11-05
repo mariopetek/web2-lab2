@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/sdeUsers.css" />
+        <link rel="stylesheet" href="/css/global.css" />
+        <title>Korisnici</title>
+    </head>
+    <body>
+        <div class="container">
+            <a href="/sde" title="Povratak na prethodnu stranicu">Povratak</a>
+            <h1>Korisnici</h1>
+            <div class="separator"></div>
+            <% if(vulnerability) { %>
+            <div class="users-container">
+                <% for(user of users) { %>
+                <div class="user-container">
+                    <div class="user-prop">
+                        <span>id: </span><%= user.user_id %>
+                    </div>
+                    <div class="user-prop">
+                        <span>korisničko ime: </span><%= user.username %>
+                    </div>
+                    <div class="user-prop">
+                        <span>lozinka: </span><%= user.password %>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <% }else { %>
+            <div class="users-container">
+                <% for(user of users) { %>
+                <div class="user-container">
+                    <div class="user-prop">
+                        <span>id: </span><%= user.user_id %>
+                    </div>
+                    <div class="user-prop">
+                        <span>korisničko ime: </span><%= user.username %>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+    </body>
+</html>

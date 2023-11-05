@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/sde.css" />
+        <link rel="stylesheet" href="/css/global.css" />
+        <title>
+            Nesigurna pohrana osjetljivih podataka (Sensitive data exposure)
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <a href="/" title="Povratak na početnu stranicu"
+                >Početna stranica</a
+            >
+            <h1>
+                Nesigurna pohrana osjetljivih podataka (Sensitive data exposure)
+            </h1>
+            <p class="instructions">
+                <span>Upute:<br /> </span>
+                Zamislimo situaciju u kojoj administrator sustava ima pristup
+                pregledu svih korisnika koji koriste sustav te mogućnost
+                upravljanja tim korisnicima. Bez obzira na to, administratoru se
+                ne bi trebale prikazivati lozinke tih korisnika. Ako uključimo
+                ranjivost i pristupimo stranici za upravljanje korisnicima
+                klikom na gumb, možemo vidjeti sve korisnike u sustavu s
+                njihovim lozinkama u obliku MD5 sažetka. MD5 sažetak je vrlo
+                nesiguran za današnje standarde te se vrlo lako uz pomoć alata
+                <a
+                    href="https://hashtoolkit.com/decrypt-md5-hash/"
+                    target="_blank"
+                    title="Alat za dekripciju MD5 sažetka"
+                    >na ovoj poveznici</a
+                >
+                može dobiti izvorni oblik lozinke. U slučaju da je ranjivost
+                isključena, lozinke su interno pohranjene koristeći puno
+                sigurniji Bcrypt sažetak koji se uopće ne dohvaća pri
+                prikazivanju svih korisnika jer nije potreban.
+            </p>
+            <div class="separator"></div>
+            <form action="/sde/users" method="get">
+                <div class="vulnerability-input">
+                    <input
+                        type="checkbox"
+                        id="vulnerability"
+                        name="vulnerability"
+                        id="vulnerability"
+                        title="Ranjivost"
+                    />
+                    <label for="vulnerability" title="Ranjivost"
+                        >Ranjivost uključena</label
+                    >
+                </div>
+                <button type="submit" title="Upravljanje korisnicima">
+                    Upravljanje korisnicima
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

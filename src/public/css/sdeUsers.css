@@ -1,0 +1,26 @@
+a {
+    color: black;
+    transition: 0.2s ease;
+    width: max-content;
+}
+a:hover {
+    opacity: 0.6;
+}
+.users-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user-container {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+.user-prop {
+    overflow-wrap: break-word;
+}
+.user-prop > span {
+    font-weight: 700;
+}

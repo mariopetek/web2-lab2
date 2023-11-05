@@ -1,0 +1,27 @@
+[
+    {
+        "user_id": 1,
+        "username": "mariop",
+        "password": "df5e8c760f430ff37c1384098bd7e806"
+    },
+    {
+        "user_id": 2,
+        "username": "petar123",
+        "password": "b63d990feab0a24ec61e606f9c1032a0"
+    },
+    {
+        "user_id": 3,
+        "username": "johndoe",
+        "password": "d763ec748433fb79a04f82bd46133d55"
+    },
+    {
+        "user_id": 4,
+        "username": "big_boy_1",
+        "password": "2c7d3df836ac0bdd0e063d77532c5219"
+    },
+    {
+        "user_id": 5,
+        "username": "patrik_p",
+        "password": "37b7db6940bc13576feded9689d40602"
+    }
+]
