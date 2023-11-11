@@ -8,7 +8,8 @@
         "build": "npm run clean; tsc; npm run copy-files",
         "copy-files": "cp -r src/public dist/public; cp -r src/views dist/views",
         "clean": "rm -rf dist",
-        "start": "node dist/app.js"
+        "start": "node dist/app.js",
+        "startDemo": "npm i; npm run build; npm start"
     },
     "keywords": [],
     "author": "",
