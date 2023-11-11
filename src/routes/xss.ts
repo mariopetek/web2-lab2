@@ -1,8 +1,12 @@
 import express from 'express'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
+    res.cookie('ID', `${process.env.FAKE_ID}`, { httpOnly: false })
     if (req.query.vulnerability === 'on') {
         return res.send(`
         <!DOCTYPE html>
