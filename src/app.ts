@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
+    res.cookie('ID', `${process.env.FAKE_ID}`, { httpOnly: false })
     res.sendFile('index.html', { root: __dirname + '/public/html' })
 })
 
